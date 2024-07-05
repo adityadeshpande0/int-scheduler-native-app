@@ -95,8 +95,8 @@ function Login({ navigation }) {
           <View style={styles.formContainer}>
             <Text
               style={{
-               fontSize:26,
-               marginBottom:30
+                fontSize: 26,
+                marginBottom: 30,
               }}
             >
               Login to continue
@@ -129,7 +129,7 @@ function Login({ navigation }) {
             <Pressable style={styles.loginButton} onPress={handleSubmit}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
-            <View style={{ flex: 1, flexDirection: "row" }}>
+            <View style={{ flex: 1, flexDirection: "row", marginTop: 10 }}>
               <Text>Don't have an account?</Text>
               <Pressable
                 onPress={handleNavigation}

@@ -12,8 +12,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 function Register({ navigation }) {
   const [formState, setFormState] = useState({
+    name: "",
+    phoneNumber: "",
     email: "",
     password: "",
+    nameError: "",
+    phoneNumberError: "",
     emailError: "",
     passwordError: "",
   });
@@ -23,7 +27,7 @@ function Register({ navigation }) {
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
-      [`${name}Error`]: "", // Reset the error message when user starts typing
+      [`${name}Error`]: "",
     }));
   };
 
@@ -67,8 +71,12 @@ function Register({ navigation }) {
     // Simulate a network request
     setTimeout(() => {
       setFormState({
+        name: "",
+        phoneNumber: "",
         email: "",
         password: "",
+        nameError: "",
+        phoneNumberError: "",
         emailError: "",
         passwordError: "",
       });
@@ -106,6 +114,30 @@ function Register({ navigation }) {
               <TextInput
                 style={styles.inputBox}
                 placeholder="Enter your Name"
+                value={formState.name}
+                onChangeText={(text) => handleChange("name", text)}
+              />
+              {formState.nameError ? (
+                <Text style={styles.errorText}>{formState.nameError}</Text>
+              ) : null}
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.textInputLabel}>Phone Number</Text>
+              <TextInput
+                style={styles.inputBox}
+                placeholder="Enter your Phone Number"
+                value={formState.phoneNumber}
+                onChangeText={(text) => handleChange("phoneNumber", text)}
+              />
+              {formState.phoneNumberError ? (
+                <Text style={styles.errorText}>{formState.phoneNumberError}</Text>
+              ) : null}
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.textInputLabel}>Email Id</Text>
+              <TextInput
+                style={styles.inputBox}
+                placeholder="Enter your Email Id"
                 value={formState.email}
                 onChangeText={(text) => handleChange("email", text)}
               />
@@ -126,36 +158,10 @@ function Register({ navigation }) {
                 <Text style={styles.errorText}>{formState.passwordError}</Text>
               ) : null}
             </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.textInputLabel}>Password</Text>
-              <TextInput
-                style={styles.inputBox}
-                placeholder="Enter your Password"
-                secureTextEntry
-                value={formState.password}
-                onChangeText={(text) => handleChange("password", text)}
-              />
-              {formState.passwordError ? (
-                <Text style={styles.errorText}>{formState.passwordError}</Text>
-              ) : null}
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.textInputLabel}>Password</Text>
-              <TextInput
-                style={styles.inputBox}
-                placeholder="Enter your Password"
-                secureTextEntry
-                value={formState.password}
-                onChangeText={(text) => handleChange("password", text)}
-              />
-              {formState.passwordError ? (
-                <Text style={styles.errorText}>{formState.passwordError}</Text>
-              ) : null}
-            </View>
             <Pressable style={styles.loginButton} onPress={handleSubmit}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
-            <View style={{ flex: 1, flexDirection: "row" }}>
+            <View style={{ flex: 1, flexDirection: "row", marginTop:10 }}>
               <Text>Already have an account?</Text>
               <Pressable
                 onPress={handleNavigation}
