@@ -2,6 +2,7 @@
   "expo": {
     "name": "interview-scheduler",
     "slug": "interview-scheduler",
+    "owner": "adityadeshpande",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
