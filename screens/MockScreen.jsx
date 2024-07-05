@@ -11,7 +11,7 @@ function MockScreen({navigation}) {
         <Pressable onPress={()=>navigation.navigate("Register")} style={{ margin: 10, backgroundColor: "gray", padding: 15 }}>
           <Text>Register Screen</Text>
         </Pressable>
-        <Pressable style={{ margin: 10, backgroundColor: "gray", padding: 15 }}>
+        <Pressable onPress={()=>navigation.navigate("Home")} style={{ margin: 10, backgroundColor: "gray", padding: 15 }}>
           <Text>Home Screen</Text>
         </Pressable>
         <Pressable style={{ margin: 10, backgroundColor: "gray", padding: 15 }}>

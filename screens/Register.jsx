@@ -35,6 +35,18 @@ function Register({ navigation }) {
     let valid = true;
     let errors = {};
 
+    if (!formState.name) {
+      errors.nameError = "Name cannot be Empty";
+      valid = false;
+    }
+
+    if (!formState.phoneNumber) {
+      errors.phoneNumberError = "Phone Number cannot be empty";
+      valid = false;
+    } else if (!/^[6-9]\d{9}$/.test(formState.phoneNumber)) {
+      errors.phoneNumberError = "Phone number is not in required format";
+    }
+
     if (!formState.email) {
       errors.emailError = "Email Id cannot be empty";
       valid = false;
@@ -130,7 +142,9 @@ function Register({ navigation }) {
                 onChangeText={(text) => handleChange("phoneNumber", text)}
               />
               {formState.phoneNumberError ? (
-                <Text style={styles.errorText}>{formState.phoneNumberError}</Text>
+                <Text style={styles.errorText}>
+                  {formState.phoneNumberError}
+                </Text>
               ) : null}
             </View>
             <View style={styles.inputContainer}>
@@ -161,7 +175,7 @@ function Register({ navigation }) {
             <Pressable style={styles.loginButton} onPress={handleSubmit}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
-            <View style={{ flex: 1, flexDirection: "row", marginTop:10 }}>
+            <View style={{ flex: 1, flexDirection: "row", marginTop: 10 }}>
               <Text>Already have an account?</Text>
               <Pressable
                 onPress={handleNavigation}
