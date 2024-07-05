@@ -173,6 +173,18 @@ function Register({ navigation }) {
           </View>
         </ScrollView>
       </View>
+      <Text
+        onPress={() => navigation.navigate("MockScreen")}
+        style={{
+          backgroundColor: "lightblue",
+          padding: 10,
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "20",
+        }}
+      >
+        Mock Screen
+      </Text>
     </SafeAreaView>
   );
 }
