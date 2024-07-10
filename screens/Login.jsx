@@ -23,7 +23,7 @@ function Login({ navigation }) {
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
-      [`${name}Error`]: "", // Reset the error message when user starts typing
+      [`${name}Error`]: "", 
     }));
   };
 
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputContainer: {
-    marginVertical: 10,
+    marginVertical: 5,
   },
   textInputLabel: {
     fontSize: 16,

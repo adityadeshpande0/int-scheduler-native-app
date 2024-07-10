@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputContainer: {
-    marginVertical: 10,
+    marginVertical: 5,
   },
   textInputLabel: {
     fontSize: 16,
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   errorContainer: {
-    height: 20, // Reserve space for the error message
+    height: 20,
     marginLeft: 5,
   },
   errorText: {

@@ -1,10 +1,14 @@
-import { SafeAreaView, Text, View } from "react-native";
+import React, { Component } from "react";
+import { Text, StyleSheet, View, SafeAreaView } from "react-native";
 
-function Home (){
-return(
+function Home() {
+  return (
     <SafeAreaView>
-        <Text>This is Home Screen</Text>
+      <Text> Home Component </Text>
     </SafeAreaView>
-)
+  );
 }
+
 export default Home;
+
+const styles = StyleSheet.create({});
