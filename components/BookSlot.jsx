@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  Button,
   Platform,
   StyleSheet,
   TouchableOpacity,
   Modal,
-  TextInput,
+  SafeAreaView,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import RNPickerSelect from "react-native-picker-select";
@@ -64,49 +63,56 @@ function BookSlot() {
   };
 
   return (
-    <View style={styles.container}>
-      <Card>
-        <TouchableOpacity style={styles.dateSelectorButton} onPress={showDateTimePicker}>
-          <Text style={styles.dateText}>{date.toDateString()}</Text>
-        </TouchableOpacity>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Card>
+          <Text style={styles.headerText}>Book Your Interview Slot</Text>
+          <TouchableOpacity style={styles.dateSelectorButton} onPress={showDateTimePicker}>
+            <Text style={styles.dateText}>{date.toDateString()}</Text>
+          </TouchableOpacity>
 
-        <DateTimePickerModal
-          show={show}
-          date={date}
-          mode={mode}
-          onChange={onChange}
-          onClose={() => setShow(false)}
-        />
+          <DateTimePickerModal
+            show={show}
+            date={date}
+            mode={mode}
+            onChange={onChange}
+            onClose={() => setShow(false)}
+          />
 
-        <RNPickerSelect
-          onValueChange={(value) => setSelectedOption(value)}
-          placeholder={{ label: "Select an option", value: null }}
-          items={[
-            { label: "Option 1", value: "Option 1" },
-            { label: "Option 2", value: "Option 2" },
-            { label: "Option 3", value: "Option 3" },
-            { label: "Option 4", value: "Option 4" },
-            { label: "Option 5", value: "Option 5" },
-          ]}
-          style={pickerSelectStyles}
-        />
+          <RNPickerSelect
+            onValueChange={(value) => setSelectedOption(value)}
+            placeholder={{ label: "Select an option", value: null }}
+            items={[
+              { label: "Option 1", value: "Option 1" },
+              { label: "Option 2", value: "Option 2" },
+              { label: "Option 3", value: "Option 3" },
+              { label: "Option 4", value: "Option 4" },
+              { label: "Option 5", value: "Option 5" },
+            ]}
+            style={pickerSelectStyles}
+          />
 
-        <TouchableOpacity
-          style={styles.bookButton}
-          onPress={handleBookSlot}
-          disabled={!selectedOption}
-        >
-          <Text style={styles.bookButtonText}>Book Slot</Text>
-        </TouchableOpacity>
-      </Card>
-    </View>
+          <TouchableOpacity
+            style={styles.bookButton}
+            onPress={handleBookSlot}
+            disabled={!selectedOption}
+          >
+            <Text style={styles.bookButtonText}>Book Slot</Text>
+          </TouchableOpacity>
+        </Card>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#f0f4f8",
+  },
   container: {
     flex: 1,
-    marginTop: 100,
+    marginTop:"10%",
     alignItems: "center",
     paddingHorizontal: 20,
   },
@@ -120,6 +126,14 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 2,
     width: "100%",
+    marginBottom: 20,
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 20,
+    textAlign: "center",
   },
   dateSelectorButton: {
     backgroundColor: "#AFB2B8",
@@ -132,6 +146,7 @@ const styles = StyleSheet.create({
   dateText: {
     fontSize: 18,
     fontWeight: "bold",
+    color: "#333",
   },
   modalContainer: {
     flex: 1,
@@ -160,14 +175,6 @@ const styles = StyleSheet.create({
   doneButtonText: {
     fontSize: 18,
     color: "white",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "gray",
-    borderRadius: 4,
-    padding: 10,
-    marginVertical: 10,
-    width: "100%",
   },
   bookButton: {
     backgroundColor: "#17c1e8",
