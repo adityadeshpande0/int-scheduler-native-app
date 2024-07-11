@@ -65,8 +65,9 @@ function BookSlot() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+      <Text style={styles.headerText}>Book Your Interview Slot</Text>
         <Card>
-          <Text style={styles.headerText}>Book Your Interview Slot</Text>
+          
           <TouchableOpacity style={styles.dateSelectorButton} onPress={showDateTimePicker}>
             <Text style={styles.dateText}>{date.toDateString()}</Text>
           </TouchableOpacity>
