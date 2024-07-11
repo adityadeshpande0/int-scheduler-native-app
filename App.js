@@ -8,6 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Register from "./screens/Register";
 import MockScreen from "./screens/MockScreen";
 import Home from "./screens/Home";
+import BookSlot from "./components/BookSlot";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
           component={Register}
         />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="BookSlot" component={BookSlot} />
       </Stack.Navigator>
     </NavigationContainer>
   );

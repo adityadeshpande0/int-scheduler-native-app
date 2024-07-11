@@ -15,7 +15,7 @@ function MockScreen({navigation}) {
           <Text>Home Screen</Text>
         </Pressable>
         <Pressable style={{ margin: 10, backgroundColor: "gray", padding: 15 }}>
-          <Text> Screen</Text>
+          <Text>User Requests</Text>
         </Pressable>
       </ScrollView>
     </SafeAreaView>
