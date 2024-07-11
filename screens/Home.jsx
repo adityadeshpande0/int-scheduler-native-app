@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-function Home({navigation}) {
+function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -17,7 +17,10 @@ function Home({navigation}) {
         </View>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Book Your Interview Slot</Text>
-          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('BookSlot')}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("BookSlot")}
+          >
             <Text style={styles.buttonText}>Book Now</Text>
           </TouchableOpacity>
         </View>

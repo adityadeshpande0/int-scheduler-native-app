@@ -1,4 +1,4 @@
-import { Pressable, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { Pressable, SafeAreaView, ScrollView, Text} from "react-native";
 
 function MockScreen({navigation}) {
   return (

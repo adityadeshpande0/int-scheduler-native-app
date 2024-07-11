@@ -216,13 +216,11 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flexGrow: 1,
-    // justifyContent: "center",
     alignItems: "center",
   },
   titleContainer: {
     justifyContent: "center",
     alignItems: "center",
-    // marginTop: 10,
     marginBottom: 30,
   },
   title: {

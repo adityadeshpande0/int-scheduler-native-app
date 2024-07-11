@@ -12,7 +12,12 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import RNPickerSelect from "react-native-picker-select";
 
 const DateTimePickerModal = ({ show, date, mode, onChange, onClose }) => (
-  <Modal transparent={true} animationType="slide" visible={show} onRequestClose={onClose}>
+  <Modal
+    transparent={true}
+    animationType="slide"
+    visible={show}
+    onRequestClose={onClose}
+  >
     <View style={styles.modalContainer}>
       <View style={styles.pickerContainer}>
         <DateTimePicker
@@ -34,11 +39,7 @@ const DateTimePickerModal = ({ show, date, mode, onChange, onClose }) => (
   </Modal>
 );
 
-const Card = ({ children }) => (
-  <View style={styles.card}>
-    {children}
-  </View>
-);
+const Card = ({ children }) => <View style={styles.card}>{children}</View>;
 
 function BookSlot() {
   const [date, setDate] = useState(new Date());
@@ -65,10 +66,12 @@ function BookSlot() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-      <Text style={styles.headerText}>Book Your Interview Slot</Text>
+        <Text style={styles.headerText}>Book Your Interview Slot</Text>
         <Card>
-          
-          <TouchableOpacity style={styles.dateSelectorButton} onPress={showDateTimePicker}>
+          <TouchableOpacity
+            style={styles.dateSelectorButton}
+            onPress={showDateTimePicker}
+          >
             <Text style={styles.dateText}>{date.toDateString()}</Text>
           </TouchableOpacity>
 
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginTop:"10%",
+    marginTop: "10%",
     alignItems: "center",
     paddingHorizontal: 20,
   },
