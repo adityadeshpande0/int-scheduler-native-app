@@ -7,6 +7,7 @@ import {
   Pressable,
   ScrollView,
   RefreshControl,
+  TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -177,12 +178,13 @@ function Register({ navigation }) {
             </Pressable>
             <View style={{ flex: 1, flexDirection: "row", marginTop: 10 }}>
               <Text>Already have an account?</Text>
-              <Pressable
+
+              <TouchableOpacity
                 onPress={handleNavigation}
                 style={{ marginHorizontal: 10 }}
               >
                 <Text style={{ color: "#03a9f4" }}>Login</Text>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -220,7 +222,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 30,
+    // marginTop: 10,
     marginBottom: 30,
   },
   title: {
